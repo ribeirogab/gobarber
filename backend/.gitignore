@@ -1,3 +1,8 @@
 node_modules
 .DS_Store
 */.DS_Store
+
+.env
+.env.dev
+tmp/*
+!tmp/.gitkeep
