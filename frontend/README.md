@@ -1,0 +1,1 @@
+# GoBarber (front-end)
