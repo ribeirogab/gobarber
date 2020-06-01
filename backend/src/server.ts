@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import 'express-async-errors';
 
 import './configs/dotenv';
@@ -10,6 +11,7 @@ import AppError from './errors/AppError';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/files', express.static(uploadConfig.directory));
@@ -30,5 +32,5 @@ app.use((error: Error, req: Request, res: Response, _: NextFunction) => {
 });
 
 app.listen(3333, () => {
-  console.log('Server is running');
+  console.log('🚀 Server is running!'); // eslint-disable-line
 });
