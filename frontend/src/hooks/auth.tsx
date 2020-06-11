@@ -42,10 +42,11 @@ const AuthProvider: React.FC = ({ children }) => {
   );
 
   const signIn = useCallback(async ({ email, password }) => {
-    const { token, user } = await api.post('/sessions', { email, password });
+    const { data: info } = await api.post('/sessions', { email, password });
+    const { token, user } = info;
 
     localStorage.setItem('@GoBarber:token', token);
-    localStorage.setItem('@GoBarber:user', user);
+    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
     setData({ token, user });
   }, []);
