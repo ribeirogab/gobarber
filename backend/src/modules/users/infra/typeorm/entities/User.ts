@@ -7,7 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 
-import Appointment from './Appointment';
+import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
 
 @Entity('users')
 class User {
